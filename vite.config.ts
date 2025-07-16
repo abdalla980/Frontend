@@ -1,18 +1,26 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react-swc'
-//
-// // https://vite.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
-// })
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 export default defineConfig({
   base: '/Frontend/',
-  plugins: [react()],
-  server: {
-    host: true, // <--- This makes it accessible on LAN (e.g., from mobile)
-    port: 5173, // optional but good to be explicit
-  },
-})
+  plugins: [
+    react(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: path.resolve(__dirname, 'dist/index.html'),
+          dest: '', // copies to dist/404.html after build
+          rename: '404.html'
+        }
+      ]
+    })
+  ]
+});
+
