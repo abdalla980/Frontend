@@ -11,7 +11,8 @@ interface RoutingControlProps {
 export default function RoutingControl({ waypoints }: RoutingControlProps) {
     const map = useMap();
 
-    useEffect(() =>{
+    // @ts-ignore
+    useEffect(() => {
         if (!map) return;
 
         const routingControl = L.Routing.control({
@@ -23,10 +24,11 @@ export default function RoutingControl({ waypoints }: RoutingControlProps) {
             draggableWaypoints: false,
             fitSelectedRoutes: true,
             showAlternatives: true,
-
         }).addTo(map);
 
-        return () => map.removeControl(routingControl);
+        return () => {
+            map.removeControl(routingControl);
+        };
     }, [map, waypoints]);
 
     return null;
