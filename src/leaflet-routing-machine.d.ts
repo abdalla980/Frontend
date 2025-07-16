@@ -1,10 +1,24 @@
-declare module 'leaflet-routing-machine' {
-    import * as L from 'leaflet';
+import * as L from 'leaflet';
 
+declare module 'leaflet' {
     namespace Routing {
-        function control(options?: any): L.Control;
-    }
+        interface RoutingControlOptions extends L.ControlOptions {
+            waypoints?: L.LatLng[];
+            routeWhileDragging?: boolean;
+            show?: boolean;
+            addWaypoints?: boolean;
+            waypointMode?: string;
+            draggableWaypoints?: boolean;
+            fitSelectedRoutes?: boolean;
+            showAlternatives?: boolean;
+        }
 
-    const Routing: typeof Routing;
-    export = Routing;
+        class Control extends L.Control {
+            constructor(options?: RoutingControlOptions);
+            setWaypoints(waypoints: L.LatLng[]): void;
+            getWaypoints(): L.LatLng[];
+        }
+
+        function control(options?: RoutingControlOptions): Control;
+    }
 }
