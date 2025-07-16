@@ -9,6 +9,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
+  base: '/Frontend/',
   plugins: [react()],
   server: {
     host: true, // <--- This makes it accessible on LAN (e.g., from mobile)

@@ -6,7 +6,7 @@ import { useLocation } from "wouter";
 
 interface MapProps {
     path: [number, number][];
-    infoPage: string;
+    infoPage?: string;
 }
 
 export default function Map({ path, infoPage }: MapProps) {
@@ -14,7 +14,9 @@ export default function Map({ path, infoPage }: MapProps) {
     const [userPosition, setUserPosition] = useState<[number, number] | null>(null);
 
     const goBack = () => setLocation("/");
-    const handleClick = () => setLocation(infoPage);
+    const handleClick = () => {
+        if(infoPage) setLocation(infoPage);
+    }
 
     useEffect(() => {
 
