@@ -12,10 +12,10 @@ export default function HistorySpots(){
         setLocation("/Rathaus-Mittweida/map")
     }
     const GoToMap2=()=>{
-        setLocation("Afra-kirche/map")
+        setLocation("/Afra-kirche/map")
     }
     const GoToMap3=()=>{
-        setLocation("Wasser-Turm/map")
+        setLocation("/Wasser-Turm/map")
     }
     return(
         <div>

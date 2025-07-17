@@ -10,13 +10,13 @@ export default function NatureSpots(){
     }
 
     const GoToMap1 =()=>{
-        setLocation("Schwanennteich-Park/map")
+        setLocation("/Schwanennteich-Park/map")
     }
     const GoToMap2=()=>{
-        setLocation("Rochlitzer-Berg/map")
+        setLocation("/Rochlitzer-Berg/map")
     }
     const GoToMap3=()=>{
-        setLocation("Chemnitz-Valley/map")
+        setLocation("/Chemnitz-Valley/map")
     }
     return(
     <div>

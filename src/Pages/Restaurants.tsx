@@ -9,13 +9,13 @@ export default function Restaurants(){
         setLocation("/");
     }
     const GoToMap1=()=>{
-        setLocation("Athos/Map")
+        setLocation("/Athos/Map")
     }
     const GoToMap2=()=>{
-        setLocation("Friedrichs/Map")
+        setLocation("/Friedrichs/Map")
     }
     const GoToMap3=()=>{
-        setLocation("Rodina/Map")
+        setLocation("/Rodina/Map")
     }
     return(
         <div>
