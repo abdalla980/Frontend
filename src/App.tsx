@@ -71,6 +71,7 @@ function App() {
                     } else if (params.trip === "Schwanennteich-Park") {
                         return (
                             <Map path={[[50.987346, 12.960329], [50.98617, 12.97594]]} />
+                            //no info page designed to make the user relax in the nature spots
                         );
                     } else if (params.trip === "Rochlitzer-Berg") {
                         return (
